@@ -112,8 +112,8 @@ ul {
 
   display: inline-flex;
   align-items: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 28px;
+  padding-bottom: 28px;
 }
 .contact-list .item {
   display: inline-flex;
@@ -126,6 +126,20 @@ ul {
 .contact-link:focus,
 .current {
   color: var(--accent-color);
+}
+.current {
+  position: relative;
+}
+.current::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: inline-block;
+  width: 48px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
 }
 .icon-contact-link {
   margin-right: 8px;
