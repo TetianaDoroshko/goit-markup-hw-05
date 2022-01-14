@@ -549,26 +549,30 @@ ul {
 
   width: 100%;
   height: 100%;
-  transform: scale(1) rotate(0deg);
+
+  visibility: 1;
+  opacity: 1;
   background-color: rgba(0, 0, 0, 0.1);
-  transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .is-hidden {
   visibility: 0;
   opacity: 0;
   pointer-events: none;
-  transform: scale(0) rotate(90deg);
 }
 .modal {
   position: absolute;
   width: 528px;
   height: 581px;
-
+  transform: scale(1) rotate(0deg);
+  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--bgd-light);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+}
+.backdrop.is-hidden .modal {
+  transform: scale(0) rotate(90deg);
 }
 .close-btn {
   position: absolute;
